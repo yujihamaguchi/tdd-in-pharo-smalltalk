@@ -19,5 +19,5 @@ Dollar >> amount: anInteger [
 
 { #category : #arithmetic }
 Dollar >> times: aMultiplier [
-	amount := amount * aMultiplier
+	^ Dollar new amount: amount * aMultiplier
 ]
