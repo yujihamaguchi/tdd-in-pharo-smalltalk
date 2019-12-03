@@ -12,12 +12,12 @@ Dollar >> = anObject [
 	^ amount = anObject amount
 ]
 
-{ #category : #accessing }
+{ #category : #'private-accessing' }
 Dollar >> amount [
 	^ amount
 ]
 
-{ #category : #accessing }
+{ #category : #'private-accessing' }
 Dollar >> amount: anInteger [
 	amount := anInteger
 ]
