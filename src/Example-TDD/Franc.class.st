@@ -1,5 +1,5 @@
 Class {
-	#name : #Dollar,
+	#name : #Franc,
 	#superclass : #Object,
 	#instVars : [
 		'amount'
@@ -8,21 +8,21 @@ Class {
 }
 
 { #category : #comparing }
-Dollar >> = anObject [
+Franc >> = anObject [
 	^ self class = anObject class & (amount = anObject amount)
 ]
 
 { #category : #'private-accessing' }
-Dollar >> amount [
+Franc >> amount [
 	^ amount
 ]
 
 { #category : #'private-accessing' }
-Dollar >> amount: anInteger [
+Franc >> amount: anInteger [
 	amount := anInteger
 ]
 
 { #category : #arithmetic }
-Dollar >> times: aMultiplier [
+Franc >> times: aMultiplier [
 	^ self class new amount: amount * aMultiplier
 ]
