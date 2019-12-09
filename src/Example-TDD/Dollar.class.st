@@ -1,16 +1,11 @@
 Class {
 	#name : #Dollar,
-	#superclass : #Object,
+	#superclass : #Money,
 	#instVars : [
 		'amount'
 	],
 	#category : #'Example-TDD'
 }
-
-{ #category : #comparing }
-Dollar >> = anObject [
-	^ self class = anObject class & (amount = anObject amount)
-]
 
 { #category : #'private-accessing' }
 Dollar >> amount [
