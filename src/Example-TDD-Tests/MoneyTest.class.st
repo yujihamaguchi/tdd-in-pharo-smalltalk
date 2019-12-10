@@ -9,7 +9,8 @@ MoneyTest >> testEquality [
 	self assert: (Dollar new amount: 5) equals: (Dollar new amount: 5).
 	self deny: (Dollar new amount: 5) equals: (Dollar new amount: 6).
 	self assert: (Franc new amount: 5) equals: (Franc new amount: 5).
-	self deny: (Franc new amount: 5) equals: (Franc new amount: 6)
+	self deny: (Franc new amount: 5) equals: (Franc new amount: 6).
+	self deny: (Dollar new amount: 5) equals: (Franc new amount: 5)
 ]
 
 { #category : #tests }
