@@ -6,25 +6,25 @@ Class {
 
 { #category : #tests }
 MoneyTest >> testEquality [
-	self assert: (Dollar new amount: 5) equals: (Dollar new amount: 5).
-	self deny: (Dollar new amount: 5) equals: (Dollar new amount: 6).
-	self assert: (Franc new amount: 5) equals: (Franc new amount: 5).
-	self deny: (Franc new amount: 5) equals: (Franc new amount: 6).
-	self deny: (Dollar new amount: 5) equals: (Franc new amount: 5)
+	self assert: (Money dollar: 5) equals: (Money dollar: 5).
+	self deny: (Money dollar: 5) equals: (Money dollar: 6).
+	self assert: (Money franc: 5) equals: (Money franc: 5).
+	self deny: (Money franc: 5) equals: (Money franc: 6).
+	self deny: (Money dollar: 5) equals: (Money franc: 5)
 ]
 
 { #category : #tests }
 MoneyTest >> testFrancMultiplication [
 	| five |
-	five := Franc new amount: 5.
-	self assert: (five times: 2) equals: (Franc new amount: 10).
-	self assert: (five times: 3) equals: (Franc new amount: 15)
+	five := Money franc: 5.
+	self assert: (five times: 2) equals: (Money franc: 10).
+	self assert: (five times: 3) equals: (Money franc: 15)
 ]
 
 { #category : #tests }
 MoneyTest >> testMultiplication [
 	| five |
-	five := Dollar new amount: 5.
-	self assert: (five times: 2) equals: (Dollar new amount: 10).
-	self assert: (five times: 3) equals: (Dollar new amount: 15)
+	five := Money dollar: 5.
+	self assert: (five times: 2) equals: (Money dollar: 10).
+	self assert: (five times: 3) equals: (Money dollar: 15)
 ]
