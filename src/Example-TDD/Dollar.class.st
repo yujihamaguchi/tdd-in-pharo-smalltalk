@@ -1,9 +1,6 @@
 Class {
 	#name : #Dollar,
 	#superclass : #Money,
-	#instVars : [
-		'amount'
-	],
 	#category : #'Example-TDD'
 }
 
@@ -19,5 +16,5 @@ Dollar >> amount: anInteger [
 
 { #category : #arithmetic }
 Dollar >> times: aMultiplier [
-	^ self class new amount: amount * aMultiplier
+	^ Money dollar: amount * aMultiplier
 ]

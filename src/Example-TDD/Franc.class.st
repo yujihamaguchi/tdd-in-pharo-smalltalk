@@ -16,5 +16,5 @@ Franc >> amount: anInteger [
 
 { #category : #arithmetic }
 Franc >> times: aMultiplier [
-	^ self class new amount: amount * aMultiplier
+	^ Money franc: amount * aMultiplier
 ]
