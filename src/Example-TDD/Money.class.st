@@ -38,6 +38,12 @@ Money >> currency [
 	^ currency
 ]
 
+{ #category : #arithmetic }
+Money >> plus: addend [
+	^ self class new setAmount: amount + addend amount currency: currency 
+	
+]
+
 { #category : #converting }
 Money >> printString [
 	^ amount asString , ' ' , currency
