@@ -5,6 +5,6 @@ Class {
 }
 
 { #category : #enumerating }
-Bank >> reduce: anExpression to: currency [
-	^ Money dollar: 10
+Bank >> reduce: anExpression to: aCurrency [
+	^ anExpression reduceTo: aCurrency
 ]

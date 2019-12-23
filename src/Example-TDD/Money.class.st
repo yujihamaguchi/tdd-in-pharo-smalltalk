@@ -23,25 +23,24 @@ Money >> = anObject [
 	^ currency = anObject currency & (amount = anObject amount)
 ]
 
-{ #category : #'private-accessing' }
+{ #category : #private }
 Money >> amount [
 	^ amount
 ]
 
-{ #category : #'private-accessing' }
+{ #category : #private }
 Money >> amount: anInteger [
 	amount := anInteger
 ]
 
-{ #category : #'private-accessing' }
+{ #category : #private }
 Money >> currency [
 	^ currency
 ]
 
 { #category : #arithmetic }
-Money >> plus: addend [
-	^ self class new setAmount: amount + addend amount currency: currency 
-	
+Money >> plus: aMoney [
+	^ Sum augend: self addend: aMoney
 ]
 
 { #category : #converting }
@@ -49,7 +48,12 @@ Money >> printString [
 	^ amount asString , ' ' , currency
 ]
 
-{ #category : #initialization }
+{ #category : #enumerating }
+Money >> reduceTo: aCurrency [
+	^ self
+]
+
+{ #category : #private }
 Money >> setAmount: anInteger currency: aString [
 	amount := anInteger.
 	currency := aString.
