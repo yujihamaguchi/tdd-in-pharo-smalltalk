@@ -22,5 +22,5 @@ Bank >> rateFrom: aCurrency to: anotherCurrency [
 
 { #category : #enumerating }
 Bank >> reduce: anExpression to: aCurrency [
-	^ anExpression reduceTo: aCurrency at: self
+	^ anExpression reduceAt: self to: aCurrency
 ]
