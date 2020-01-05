@@ -51,6 +51,18 @@ MoneyTest >> testPlusReturnsSum [
 ]
 
 { #category : #tests }
+MoneyTest >> testPlusSumMoney [
+	| fiveBucks bank tenFrancs sum result |
+	fiveBucks := Money dollar: 5.
+	tenFrancs := Money franc: 10.
+	bank := Bank new.
+	bank addRate: (Rate from: 'CHF' to: 'USD' rate: 2).
+	sum := (Sum augend: fiveBucks addend: tenFrancs) plus: fiveBucks .
+	result := sum reduceAt: bank to: 'USD'.
+	self assert: result equals: (Money dollar: 15)
+]
+
+{ #category : #tests }
 MoneyTest >> testReduceMoney [
 	| bank result |
 	bank := Bank new.
@@ -85,4 +97,16 @@ MoneyTest >> testSimpleAddtion [
 	sum := five plus: five.
 	reduced := bank reduce: sum to: 'USD'.
 	self assert: reduced equals: (Money dollar: 10)
+]
+
+{ #category : #tests }
+MoneyTest >> testSumTimes [
+	| fiveBucks tenFrancs bank sum result |
+	fiveBucks := Money dollar: 5.
+	tenFrancs := Money franc: 10.
+	bank := Bank new.
+	bank addRate: (Rate from: 'CHF' to: 'USD' rate: 2).
+	sum := (Sum augend: fiveBucks addend: tenFrancs) times: 2.
+	result := sum reduceAt: bank to: 'USD'.
+	self assert: result equals: (Money dollar: 20)
 ]
